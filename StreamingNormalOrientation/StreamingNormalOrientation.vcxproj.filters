@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Quelldateien">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien\SVD">
+      <UniqueIdentifier>{60df7abf-b919-4fa4-b131-6b5fdf6f8433}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\SVD">
+      <UniqueIdentifier>{c539fa8e-fa4b-4730-891e-39d88a36f6ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\nih">
+      <UniqueIdentifier>{56da177a-e20f-4219-9a2d-950e21d64f09}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="normalEstimation.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="normalEstimation.cuh">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SVD\Jacobi_Conjugation_Kernel.cuh">
+      <Filter>Headerdateien\SVD</Filter>
+    </ClInclude>
+    <ClInclude Include="SVD\Kernel_Declarations.cuh">
+      <Filter>Headerdateien\SVD</Filter>
+    </ClInclude>
+    <ClInclude Include="SVD\Main_Kernel_Body.cuh">
+      <Filter>Headerdateien\SVD</Filter>
+    </ClInclude>
+    <ClInclude Include="SVD\Givens_QR_Factorization_Kernel.cuh">
+      <Filter>Headerdateien\SVD</Filter>
+    </ClInclude>
+    <ClInclude Include="SVD\SVD.cuh">
+      <Filter>Headerdateien\SVD</Filter>
+    </ClInclude>
+    <ClInclude Include="MortonUtils.cuh">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="normalOrientation.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="basicProcessing.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="pointCloudWriter.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SignedUnionFind.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="kdTree.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="nih\priority_queue.h">
+      <Filter>Headerdateien\nih</Filter>
+    </ClInclude>
+    <ClInclude Include="nih\priority_queue_inline.h">
+      <Filter>Headerdateien\nih</Filter>
+    </ClInclude>
+    <ClInclude Include="nih\types.h">
+      <Filter>Headerdateien\nih</Filter>
+    </ClInclude>
+    <ClInclude Include="normalOrientationHooks.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="OrientationProblem.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockTimer.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PointCloudStreamAscii.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PointCloudStreamBinary.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenPointCloudStreamBinary.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="common.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="kdTree.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="OrientationProblem.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockTimer.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="normalOrientationHooks.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="normalEstimation.cu">
+      <Filter>Quelldateien</Filter>
+    </CudaCompile>
+    <CudaCompile Include="SVD\SVD.cu">
+      <Filter>Quelldateien\SVD</Filter>
+    </CudaCompile>
+    <CudaCompile Include="MortonUtils.cu">
+      <Filter>Quelldateien</Filter>
+    </CudaCompile>
+  </ItemGroup>
+</Project>
