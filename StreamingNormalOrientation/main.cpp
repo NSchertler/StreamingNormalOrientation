@@ -32,26 +32,26 @@ struct OrientationDispatcherTemplate : public OrientationDispatcher<TVertex>
 	OrientationDispatcherTemplate(NormalOrientation<TVertex>& no) : OrientationDispatcher<TVertex>(no)
 	{
 		if (std::is_same<TFlipCriterion, FlipCriterionHoppe>::value)
-			name = "Hoppe";
+			this->name = "Hoppe";
 		else if (std::is_same<TFlipCriterion, FlipCriterionXie>::value)
-			name = "Xie";
+			this->name = "Xie";
 		else
-			name = "Unknown";
+			this->name = "Unknown";
 	}
 
 	virtual int OrientStreaming(std::shared_ptr<PointCloudStreamBinary<TVertex>> cloud, const char* filenameOut, float searchRadius, int neighborCount, float connectedComponentsMinimalSize, unsigned int segmentMinSize, float minSegmentVoteCertainty, float minAccumulatedVoteCertainty, Eigen::Vector3f& bbxMin, Eigen::Vector3f& bbxMax)
 	{
-		return no.OrientNormalsStreaming<TFlipCriterion, TSolver>(cloud, filenameOut, searchRadius, neighborCount, connectedComponentsMinimalSize, segmentMinSize, minSegmentVoteCertainty, minAccumulatedVoteCertainty, bbxMin, bbxMax);
+		return this->no.template OrientNormalsStreaming<TFlipCriterion, TSolver>(cloud, filenameOut, searchRadius, neighborCount, connectedComponentsMinimalSize, segmentMinSize, minSegmentVoteCertainty, minAccumulatedVoteCertainty, bbxMin, bbxMax);
 	}
 
 	virtual int Orient(std::shared_ptr<PointCloudStreamBinary<TVertex>> cloud, const char* filenameOut, float searchRadius, float connectedComponentsMinimalSize, const int neighborCount, Eigen::Vector3f& bbxMin, Eigen::Vector3f& bbxMax)
 	{
-		return no.OrientNormals<TFlipCriterion, TSolver>(cloud, filenameOut, searchRadius, connectedComponentsMinimalSize, neighborCount, bbxMin, bbxMax);
+		return this->no.template OrientNormals<TFlipCriterion, TSolver>(cloud, filenameOut, searchRadius, connectedComponentsMinimalSize, neighborCount, bbxMin, bbxMax);
 	}
 
 	virtual double CalculateEnergy(std::shared_ptr<PointCloudStreamBinary<TVertex>> cloud, float searchRadius, const int neighborCount, Eigen::Vector3f& bbxMin, Eigen::Vector3f& bbxMax)
 	{
-		return no.CalculateEnergy<TFlipCriterion>(cloud, searchRadius, neighborCount, bbxMin, bbxMax);
+		return this->no.template CalculateEnergy<TFlipCriterion>(cloud, searchRadius, neighborCount, bbxMin, bbxMax);
 	}
 };
 

@@ -121,8 +121,8 @@ typedef VPosition<VBase> VertexPosition;
 typedef VNormal<VertexPosition> VertexPositionNormal;
 typedef VColor<VNormal<VertexPosition>> VertexPositionNormalColor;
 
-extern inline std::ostream& operator<<(std::ostream& os, const VertexPosition& v);
+extern std::ostream& operator<<(std::ostream& os, const VertexPosition& v);
 
-extern inline std::ostream& operator<<(std::ostream& os, const VertexPositionNormal& v);
+extern std::ostream& operator<<(std::ostream& os, const VertexPositionNormal& v);
 
-extern inline std::ostream& operator<<(std::ostream& os, const VertexPositionNormalColor& v);
+extern std::ostream& operator<<(std::ostream& os, const VertexPositionNormalColor& v);
