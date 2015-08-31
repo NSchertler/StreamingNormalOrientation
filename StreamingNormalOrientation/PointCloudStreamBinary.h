@@ -103,6 +103,13 @@ public:
 		Process(verticesPerBlockPerThread, vertexProcessor, parameter, parallel);
 	}
 	
+	void PrepareForStreaming(bool realign = true)
+	{
+		BasicProcessing bp;
+		bp.calculateBoundingBoxCentroid(this);
+		PrepareForStreaming(bp.bbxMin, bp.bbxMax, bp.centroid, realign);
+	}
+
 	// Prepares the point cloud for streaming, i.e. sorts the points along the x-axis.
 	// realign - set to true to allow the point cloud to be rotated to map the longest principal axis to the x-axis.
 	void PrepareForStreaming(const Eigen::Vector3f& bbxMin, const Eigen::Vector3f& bbxMax, const Eigen::Vector3f& centroid, bool realign = true)
@@ -112,14 +119,14 @@ public:
 		Eigen::Matrix3f rot = Eigen::Matrix3f::Identity();
 
 		if (realign)
-		{			
+		{
 #ifndef ACCURATE_TIMING
 			cout << "Calculating covariance..." << endl;
 #endif
 			CovarianceCalculator covCalc(nProcessors, centroid);
 
 			Process(
-				(int)(blockSize / sizeof(TVertex) / nProcessors),
+				blockSize / sizeof(TVertex) / nProcessors,
 				std::bind(&CovarianceCalculator::PrepareCovariance, &covCalc, placeholders::_1),
 				std::bind(&CovarianceCalculator::AccumulateCovariance, &covCalc, placeholders::_1, placeholders::_2, placeholders::_3, placeholders::_4), nullptr, true);
 
@@ -136,9 +143,12 @@ public:
 #ifndef ACCURATE_TIMING
 			cout << "Rotation: " << endl << rot << endl;
 #endif
+			ExternalMergeSort(centroid, rot);
 		}
-
-		ExternalMergeSort(centroid, rot);
+		else
+		{
+			ExternalMergeSort(Eigen::Vector3f(0, 0, 0), rot);
+		}
 	}
 
 private:

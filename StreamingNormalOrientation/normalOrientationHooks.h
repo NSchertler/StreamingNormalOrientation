@@ -160,7 +160,7 @@ public:
 		std::sort(edges.begin(), edges.end(), [](const TOrientationProblem::Edge& edge1, const TOrientationProblem::Edge& edge2) {return abs(edge1.weight) > abs(edge2.weight); });
 
 		//structure for MST
-		std::unordered_map<int, std::unordered_map<int, float>> mst;
+		std::vector<std::unordered_map<int, float>> mst(problem._uf.size());
 
 		//construct the MST
 		for (auto edge = edges.begin(); edge != edges.end(); ++edge)

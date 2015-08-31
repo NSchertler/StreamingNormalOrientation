@@ -283,7 +283,7 @@ int main(int argc, const char* args[])
 
 		int components = 0;
 		if (stream)
-			components = orientationDispatcher->OrientStreaming(cloud, orientedName.c_str(), searchRadius, (int)ceil(neighborCount / 2.0), searchRadius, 100, minSegmentVoteCertainty, minAccumulatedVoteCertainty, bp.bbxMin, bp.bbxMax);			
+			components = orientationDispatcher->OrientStreaming(cloud, orientedName.c_str(), searchRadius, neighborCount, searchRadius, 100, minSegmentVoteCertainty, minAccumulatedVoteCertainty, bp.bbxMin, bp.bbxMax);			
 		else
 			components = orientationDispatcher->Orient(cloud, orientedName.c_str(), searchRadius, searchRadius, neighborCount, bp.bbxMin, bp.bbxMax);
 
