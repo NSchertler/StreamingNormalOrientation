@@ -29,7 +29,7 @@ CUDA can be used to enable a simple PCA-based normal estimation step.
 The program is a command line application with the following parameters:
 
 ```
-Parameters: filename [options]" << endl;
+Parameters: filename [options]
 	filename        first argument must be the input file name (PLY OR BIN file without extension)
 options:
 	-stream         streaming orientation.
