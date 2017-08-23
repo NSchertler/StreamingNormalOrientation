@@ -137,7 +137,7 @@
     <CudaCompile Include="SVD\SVD.cu" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\dependencies\QPBO-opengm\QPBO.vcxproj">
+    <ProjectReference Include="..\dependencies\QPBO-opengm\QPBO_vs14.vcxproj">
       <Project>{acccb653-c128-47f1-9d2c-93da46def6b6}</Project>
     </ProjectReference>
   </ItemGroup>
