@@ -11,8 +11,8 @@ Eigen3 is a mandatory dependency. The Visual Studio solution uses the environmen
 ### Boost
 The following Boost components are required: `thread`, `system`, `filesystem`. The environment variable `BOOST_ROOT` should be set. Under Windows, the libraries must be built in `%BOOST_ROOT%/lib64-msvc-12.0`. The Visual Studio solution uses statically linked libraries, whereas the CMake version uses dynamically linked libraries. In this case, the shared libraries must be in the PATH.
 
-### OpenGM (no action necessary)
-OpenGM is used for graph-based optimization. The necessary files are included in the `dependencies` directory. No further actions are necessary.
+### OpenGM
+OpenGM is used for graph-based optimization. The necessary files are included as submodules of the repository. Make sure to check them out.
 
 ### HDF5 (optional)
 The HDF5 library can be used to serialize optimization models. The environment variable `HDF5_ROOT` should be set.

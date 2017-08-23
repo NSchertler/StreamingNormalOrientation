@@ -1,0 +1,6 @@
+[submodule "dependencies/opengm"]
+	path = dependencies/opengm
+	url = https://github.com/opengm/opengm
+[submodule "dependencies/QPBO-opengm"]
+	path = dependencies/QPBO-opengm
+	url = https://github.com/NSchertler/QPBO-opengm.git
