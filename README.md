@@ -9,7 +9,7 @@ The repository contains Visual Studio 2013 solutions as well as CMake files. As 
 Eigen3 is a mandatory dependency. The Visual Studio solution uses the environment variable `EIGEN3_ROOT` to find the library. The CMake version additionally looks up some common directories.
 
 ### Boost
-The following Boost components are required: `thread`, `system`, `filesystem`. The environment variable `BOOST_ROOT` should be set. Under Windows, the libraries must be built in `%BOOST_ROOT%/lib64-msvc-12.0`. The Visual Studio solution uses statically linked libraries, whereas the CMake version uses dynamically linked libraries. In this case, the shared libraries must be in the PATH.
+The following Boost components are required: `thread`, `system`, `filesystem`. The environment variable `BOOST_ROOT` should be set. Under Windows, the libraries must be built in `%BOOST_ROOT%/lib64-msvc-14.0` (this is the directory structure used by the pre-built binary installer). The Visual Studio solution uses statically linked libraries, whereas the CMake version uses dynamically linked libraries. In this case, the shared libraries must be in the PATH.
 
 ### OpenGM
 OpenGM is used for graph-based optimization. The necessary files are included as submodules of the repository. Make sure to check them out.
