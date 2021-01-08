@@ -2,7 +2,7 @@
 This repository contains the code for the paper "Towards Globally Optimal Normal Orientations for Large Point Clouds"
 
 # Build Instructions
-The repository contains Visual Studio 2013 solutions as well as CMake files. As soon as the dependencies are fulfilled, the code should build out of the box. The CMake version allows you to choose the included components. The Visual Studio solution includes a project with minimal requirements and a full project. Make sure to compile as x64.
+The repository contains Visual Studio 2015 solutions as well as CMake files. As soon as the dependencies are fulfilled, the code should build out of the box. The CMake version allows you to choose the included components. The Visual Studio solution includes a project with minimal requirements and a full project. Make sure to compile as x64.
 
 ## Dependencies
 ### Eigen3
